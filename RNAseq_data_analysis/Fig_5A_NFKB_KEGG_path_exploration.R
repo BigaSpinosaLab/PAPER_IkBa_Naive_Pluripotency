@@ -117,9 +117,6 @@ for(i in 1:length(norm.counts.nfkb.long))
           axis.ticks.x.bottom =  element_blank(),
           axis.line.x.bottom=element_line(linewidth = 0.2),
           axis.line.y.left = element_line(linewidth = 0.2)) +
-    # scale_fill_manual(values = c("HE" = "green4", 
-    #                              "HSC" = "darkorchid4")) +
-    #ylim(c(0,max(toplot$value)+0.5)) +
     ggtitle(names(norm.counts.nfkb.long)[i]) +
     ylab("Normalized Expression") +
     xlab("")
