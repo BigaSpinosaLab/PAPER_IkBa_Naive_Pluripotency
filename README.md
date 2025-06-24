@@ -12,7 +12,7 @@ Scripts required to reproduce the complete RNAseq data analysis, specifically:
  
 - Downstream analysis: script named as *1_DEA_KO_vs_WT.R* to conduct differential expression analysis between IkBa KO and WT conditions at different timepoints. Results obtained from this script are enclosed in Supplementary Table 3 of the manuscript.
   
-- Related paper figures, specifically:
+- Related paper figures, specifically for:
   
   - Figure 1F: Heatmap of selected genes across all samples.
   - Figure 2C: First two principal components including all samples.
