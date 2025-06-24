@@ -50,11 +50,29 @@ norm.counts <- list("mESCs" = readRDS(file = "RData/KO_vs_WT_comparisons/Normali
 
 norm.counts <- lapply(norm.counts, function(dds) as.data.frame(assay(dds)))
 
-# Option B: all samples normalized together (i.e. matrix from GEO)
+# Option B: all samples normalized together (i.e. norm exprs matrix from GEO)
 norm.counts <- read.table(file = "Downloads/GSE239563_RNAseq_All_samples_Norm_counts.txt", header=TRUE)
 rownames(norm.counts) <- norm.counts$gene_ID
 norm.counts <- norm.counts[,-1]
 
+# Import metadata info to change colnames - can be downloaded from GitHub repo (or created)
+                      
+metadata <- read.table(file="Downloads/Metadata.txt", 
+                       header=TRUE, sep="\t")
+#metadata$Clone.n <- as.factor(metadata$Clone.n)  # Optional
+
+head(metadata)
+#   Sample_id Timepoint Group Clone.n
+# 1     D4_48   EBs_48h    KO       1
+# 2     D4_96   EBs_96h    KO       1
+# 3    E14_48   EBs_48h    WT       1
+# 4    E14_96   EBs_96h    WT       1
+# 5     E2_48   EBs_48h    KO       2
+# 6     E2_96   EBs_96h    KO       2
+
+metadata <- metadata %>%
+  dplyr::mutate(SampleName = paste(Timepoint, paste(Group,Clone.n, sep=""), sep="_"))
+                      
 colnames(norm.counts) <- metadata$SampleName
 
   # Split them in a list: one element per timepoint
