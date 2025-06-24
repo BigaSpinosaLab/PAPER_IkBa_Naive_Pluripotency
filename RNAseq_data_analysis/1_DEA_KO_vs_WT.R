@@ -68,7 +68,7 @@ rownames(counts) <- counts$gene_ID
 counts <- counts[,-1]
 
 # 2. Import metadata files (can be found at GitHub repo)
-metadata <- read.table(file="Desktop/Scripts_IkBa_eLife_paper/RNAseq/Metadata.txt", 
+metadata <- read.table(file="Downloads/Metadata.txt", 
                        header=TRUE, sep="\t")
 metadata$Clone.n <- as.factor(metadata$Clone.n)
 
