@@ -31,7 +31,7 @@ Scripts required to reproduce the complete ChIPseq data analysis, specifically:
 
 - Data preprocessing: prepare corresponding BAM files ready for peak calling. Check repository as the lab standard pre-procesing workflow: https://github.com/BigaSpinosaLab/LAB_ChIPseq_Data_Analysis
  
-- Downstream analysis: scripts in this subfolder include (i) Peak calling with MACS2 (narrow peaks) or epic2 (broad peaks), (ii) Differential Binding analysis based on lists of called peak in different conditions and (iii) Differential Enhancer Activity (based on results of histone marks) and corresponding functional analysis.
+- Downstream analysis: scripts in this subfolder include (i) Peak calling with MACS2 (narrow peaks) or epic2 (broad peaks), (ii) peak annotation and consensus peakset per condition,  (iii) Differential Binding analysis based on lists of called peak in different conditions and (iv) Differential Enhancer Activity (based on results of histone marks) and corresponding functional analysis.
   
 To conduct data preprocessing, original FASTQ files are required. Please check GEO accession no. GSE239564 (ChIPseq data) [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE239564]. 
 
